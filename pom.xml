@@ -147,7 +147,9 @@
 
   <build>
     <finalName>spring-test</finalName>
-    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+
+    <!-- 生成的pluginManagement节点，导致dsl编译不生效 -->
+    <!--<pluginManagement>&lt;!&ndash; lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) &ndash;&gt;-->
       <plugins>
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
@@ -202,7 +204,7 @@
                 <goal>process</goal>
               </goals>
               <configuration>
-                <outputDirectory>target/generated-sources/java</outputDirectory>
+                <outputDirectory>target/generated-sources/querydsl</outputDirectory>
                 <processor>com.querydsl.apt.jpa.JPAAnnotationProcessor</processor>
                 <!--<processor>com.querydsl.apt.hibernate.HibernateAnnotationProcessor</processor>-->
               </configuration>
@@ -216,6 +218,6 @@
         </plugin>
 
       </plugins>
-    </pluginManagement>
+    <!--</pluginManagement>-->
   </build>
 </project>
