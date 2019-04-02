@@ -1,7 +1,9 @@
 package com.yqq.entity;
 
+import com.yqq.enums.StatusEnum;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 
@@ -22,6 +24,10 @@ public class UserInfoEntity extends BaseEntiy {
     @OneToOne
     @JoinColumn(name = "deptId")//注释本表中指向另一个表的外键。
     private DeptInfoEntity deptInfo;
+
+//    @Column(name = "status")
+//    @Type(type = "com.yqq")
+//    private StatusEnum status;
 
     public String getUserName() {
         return userName;
