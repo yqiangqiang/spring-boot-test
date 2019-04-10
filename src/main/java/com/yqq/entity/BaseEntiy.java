@@ -11,8 +11,8 @@ public abstract class BaseEntiy implements Serializable {
     @GeneratedValue
     private long id;
 
-    @Column(name = "status")
-    private int status;
+//    @Column(name = "status")
+//    private int status;
 
     @Column(name = "insert_by")
     private long insertBy;
@@ -34,13 +34,13 @@ public abstract class BaseEntiy implements Serializable {
         this.id = id;
     }
 
-    public int getStatus() {
-        return status;
-    }
-
-    public void setStatus(int status) {
-        this.status = status;
-    }
+//    public int getStatus() {
+//        return status;
+//    }
+//
+//    public void setStatus(int status) {
+//        this.status = status;
+//    }
 
     public long getInsertBy() {
         return insertBy;

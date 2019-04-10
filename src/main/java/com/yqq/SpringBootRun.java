@@ -3,6 +3,7 @@ package com.yqq;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.yqq.config.spring.DataSourceConfig;
+import com.yqq.config.swagger.SwaggerConfig;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
@@ -30,7 +31,10 @@ import java.util.List;
 //@Api(value = "SayController|一个用来测试swagger注解的控制器")
 
 @SpringBootApplication
-@Import(DataSourceConfig.class)
+@Import({
+        DataSourceConfig.class,
+        SwaggerConfig.class
+})
 
 public class SpringBootRun {
 //

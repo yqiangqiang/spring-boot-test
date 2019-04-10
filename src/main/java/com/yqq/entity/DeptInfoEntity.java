@@ -1,9 +1,8 @@
 package com.yqq.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import com.yqq.enums.StatusEnum;
+
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -15,6 +14,7 @@ public class DeptInfoEntity extends BaseEntiy{
 
     @Column(name = "dept_name")
     private String deptName;
+
 
 //    @Column(name = "id")
 //    @OneToMany(mappedBy = "id")

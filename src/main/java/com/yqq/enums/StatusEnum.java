@@ -1,32 +1,50 @@
 package com.yqq.enums;
 
-public enum  StatusEnum {
+import java.util.Objects;
 
-    DELETE(0, "删除"),
-    NORMAL(1, "可用"),
-    DISABLE(2, "禁用");
+public enum  StatusEnum implements IBaseDbEnum{
 
-    private int status;
-    private String describle;
+    DELETE(1, "删除"),
+    NORMAL(2, "可用"),
+    DISABLE(3, "禁用");
 
-    StatusEnum(int status, String describle) {
-        this.status = status;
+    StatusEnum(int value, String describle) {
+        this.value = value;
         this.describle = describle;
     }
 
-    public int getStatus() {
-        return status;
+    private Integer value;
+
+    private String describle;
+
+    @Override
+    public Integer getValue() {
+        return value;
     }
 
-    public void setStatus(int status) {
-        this.status = status;
-    }
-
+    @Override
     public String getDescrible() {
         return describle;
+    }
+
+    public void setValue(Integer value) {
+        this.value = value;
     }
 
     public void setDescrible(String describle) {
         this.describle = describle;
     }
+
+    //
+//
+//    //获取枚举实例
+//    public static StatusEnum fromValue(Integer status) {
+//        for (StatusEnum statusEnum : StatusEnum.values()) {
+//            if (Objects.equals(status, statusEnum.getStatus())) {
+//                return statusEnum;
+//            }
+//        }
+//        throw new IllegalArgumentException();
+//    }
+
 }
