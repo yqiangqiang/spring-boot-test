@@ -28,6 +28,16 @@ public class UserInfoEntity extends BaseEntiy {
     @Type(type = "com.yqq.enums.DbEnumType")
     private StatusEnum status;
 
+    public String getAddColumn() {
+        return userName + " ------这个是一个拓展的列";
+    }
+
+    public void setAddColumn(String addColumn) {
+        this.addColumn = addColumn;
+    }
+
+    @Transient
+    private String addColumn;
 
     public String getUserName() {
         return userName;
