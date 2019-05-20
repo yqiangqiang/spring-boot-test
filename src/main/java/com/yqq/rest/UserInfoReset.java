@@ -1,11 +1,9 @@
-package com.yqq.controler;
+package com.yqq.rest;
 
 import com.alibaba.fastjson.JSONObject;
-import com.yqq.entity.DeptInfoEntity;
 import com.yqq.entity.UserInfoEntity;
 import com.yqq.enums.StatusEnum;
 import com.yqq.service.UserInfoService;
-import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -14,10 +12,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -63,5 +58,8 @@ public class UserInfoReset {
     public void findDistinct(){
         userInfoService.testQuery();
     }
+
+
+
 
 }

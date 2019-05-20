@@ -1,5 +1,6 @@
 package com.yqq.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.yqq.enums.StatusEnum;
 
 import javax.persistence.*;
@@ -17,8 +18,8 @@ public class DeptInfoEntity extends BaseEntiy{
 
 
 //    @Column(name = "id")
-//    @OneToMany(mappedBy = "id")
-//    private List<UserInfoEntity> userInfo;
+    @OneToMany(mappedBy = "deptInfo")
+    private List<UserInfoEntity> userInfo;
 
     public long getParentId() {
         return parentId;
@@ -36,5 +37,11 @@ public class DeptInfoEntity extends BaseEntiy{
         this.deptName = deptName;
     }
 
+    public List<UserInfoEntity> getUserInfo() {
+        return userInfo;
+    }
 
+    public void setUserInfo(List<UserInfoEntity> userInfo) {
+        this.userInfo = userInfo;
+    }
 }

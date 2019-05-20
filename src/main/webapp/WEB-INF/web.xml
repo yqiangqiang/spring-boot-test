@@ -4,31 +4,6 @@
 
   <display-name>springMVC-test</display-name>
 
-<!--  mvc配置-->
-  <listener>
-    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-  </listener>
-  
-  <context-param>
-    <param-name>contextConfigLocation</param-name>
-    <param-value>classpath*:config/applicationContext.xml</param-value>
-  </context-param>
-
-  <servlet>
-    <servlet-name>spring</servlet-name>
-    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-    <init-param>
-      <param-name>contextConfigLocation</param-name>
-      <param-value>classpath*:config/applicationContext.xml</param-value>
-    </init-param>
-    <load-on-startup>1</load-on-startup>
-  </servlet>
-
-  <servlet-mapping>
-    <servlet-name>spring</servlet-name>
-    <url-pattern>*.do</url-pattern>
-  </servlet-mapping>
-
 
 
 </web-app>

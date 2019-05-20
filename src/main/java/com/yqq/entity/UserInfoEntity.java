@@ -1,5 +1,6 @@
 package com.yqq.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.yqq.enums.StatusEnum;
 import org.hibernate.annotations.Type;
 
@@ -8,6 +9,7 @@ import javax.persistence.*;
 @Entity //hibernate 注解，必须与@Id注解 结合使用。否则  No identifier specified for entity:
 @Table(name="user_info") //spring @Table注解  作用是 ： 声明此对象映射到数据库的数据表，通过它可以为实体指定表(talbe)
 public class UserInfoEntity extends BaseEntiy {
+
 
 
     @Column(name = "user_name")
@@ -19,6 +21,7 @@ public class UserInfoEntity extends BaseEntiy {
 //    @Column(name = "dept_id")
 //    private long deptId;
 
+    @JsonIgnore
     @OneToOne
     @JoinColumn(name = "deptId")//注释本表中指向另一个表的外键。
     private DeptInfoEntity deptInfo;
