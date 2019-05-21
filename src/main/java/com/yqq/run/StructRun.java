@@ -2,8 +2,8 @@ package com.yqq.run;
 
 //import com.alibaba.fastjson.JSONObject;
 
-import com.yqq.entity.Dept;
-import com.yqq.entity.User;
+import com.yqq.springBoot.entity.Dept;
+import com.yqq.springBoot.entity.User;
 
 import java.util.Date;
 
