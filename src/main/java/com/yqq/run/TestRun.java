@@ -1,6 +1,8 @@
 package com.yqq.run;
 
 import com.alibaba.fastjson.JSONObject;
+import com.google.common.collect.ClassToInstanceMap;
+import com.google.common.collect.MutableClassToInstanceMap;
 import com.yqq.springBoot.entity.User;
 
 import java.text.SimpleDateFormat;
@@ -14,9 +16,15 @@ public class TestRun {
 
 
 //        TestRun.testFilter();
-        TestRun.testMap();
+//        TestRun.testMap();
 
+        User u = new User();
+        u.setUserName("abc");
+        ClassToInstanceMap<Object> map = MutableClassToInstanceMap.create();
+        map.putInstance(User.class, u);
 
+        User u2 =  map.getInstance(User.class);
+        System.out.println(u2.getUserName());
 
     }
 

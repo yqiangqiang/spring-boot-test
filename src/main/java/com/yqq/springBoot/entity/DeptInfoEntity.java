@@ -15,7 +15,7 @@ public class DeptInfoEntity extends BaseEntiy{
 
 
 //    @Column(name = "id")
-    @OneToMany(mappedBy = "deptInfo")
+    @OneToMany(mappedBy = "deptInfo",fetch = FetchType.LAZY)
     private List<UserInfoEntity> userInfo;
 
     public long getParentId() {

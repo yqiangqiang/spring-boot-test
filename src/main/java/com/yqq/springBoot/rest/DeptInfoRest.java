@@ -1,5 +1,6 @@
 package com.yqq.springBoot.rest;
 
+import com.alibaba.fastjson.JSONObject;
 import com.yqq.springBoot.entity.DeptInfoEntity;
 import com.yqq.springBoot.service.DeptInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,9 +21,11 @@ public class DeptInfoRest {
     DeptInfoService deptInfoService;
 
     @GetMapping(path = "findAll")
-    public Page<DeptInfoEntity> findAll(DeptInfoService.Condition condition) {
+    public String findAll(DeptInfoService.Condition condition) {
         Pageable pageable = new PageRequest(0, 3, Sort.Direction.DESC, "id");
-        return deptInfoService.findAll(condition,pageable);
+
+        deptInfoService.findAll(condition,pageable);
+        return JSONObject.toJSONString(pageable);
     }
 
 
